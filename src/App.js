@@ -16,7 +16,6 @@ class App extends React.Component {
     // make api call
     // dispatch action to
     store.dispatch(addMovies(data))
-    console.log('hih')
   }
 
   isMovieFavourite = (movie) =>{
@@ -37,13 +36,12 @@ class App extends React.Component {
   }
   render(){
     console.log("RENDER", this.props.store.getState())
-    console.log('hih')
 
-    const { movies } = this.props.store.getState();
+    const { movies, search } = this.props.store.getState();
     const list = movies.activeTab === "Movies" ?  movies.list : movies.favourites;
     return (
       <div className="App">
-        <NavBar />
+        <NavBar dispatch={this.props.store.dispatch} search={search}/>
         <div className="main">
           <div className="tabs">
             <div className={`tab ${movies.activeTab === "Movies" ? 'active-tabs': ""}`} onClick={this.activeTab}>Movies</div>

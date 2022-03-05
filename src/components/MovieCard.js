@@ -5,12 +5,12 @@ export default class MovieCard extends Component {
   handleFavouriteClick = () =>{
       console.log("Hello World")
       const {movie} = this.props;
-      console.log("dispatched return", this.props.dispatch(addFavourites(movie)))
+      this.props.dispatch(addFavourites(movie))
   }
   handleUnfavouriteClick = () => {
     console.log("Hello World")
     const {movie} = this.props;
-   console.log("dispatched return", this.props.dispatch(removeFavourites(movie)))
+  this.props.dispatch(removeFavourites(movie))
   }
   render() {
     const { movie, isFavourite } = this.props;
