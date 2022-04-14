@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addFavourites,removeFavourites } from '../actions'
+import { addFavourites,removeFavourites } from '../actions';
 
 export default class MovieCard extends Component {
   handleFavouriteClick = () =>{
@@ -34,3 +34,12 @@ export default class MovieCard extends Component {
     )
   }
 }
+
+// function mapStateToProps(state){
+//   return {
+//     movie: state.movies.find(),
+//   }
+// }
+
+// const connectedMovieComponent = connect(mapStateToProps)(MovieCard)
+// export  connectedMovieComponent;
