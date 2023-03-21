@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { addFavourites,removeFavourites } from '../actions';
+import { addFavourites,removeFavourites } from '../actions'
 
 export default class MovieCard extends Component {
   handleFavouriteClick = () =>{
       console.log("Hello World")
       const {movie} = this.props;
-      this.props.dispatch(addFavourites(movie))
+      console.log("dispatched return", this.props.dispatch(addFavourites(movie)))
   }
   handleUnfavouriteClick = () => {
     console.log("Hello World")
     const {movie} = this.props;
-  this.props.dispatch(removeFavourites(movie))
+   console.log("dispatched return", this.props.dispatch(removeFavourites(movie)))
   }
   render() {
     const { movie, isFavourite } = this.props;
@@ -34,12 +34,3 @@ export default class MovieCard extends Component {
     )
   }
 }
-
-// function mapStateToProps(state){
-//   return {
-//     movie: state.movies.find(),
-//   }
-// }
-
-// const connectedMovieComponent = connect(mapStateToProps)(MovieCard)
-// export  connectedMovieComponent;
